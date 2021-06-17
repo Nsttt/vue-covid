@@ -1,18 +1,18 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <main v-if="!loading">
+    <DataTitle :text="title" :dataDate="dataDate" />
+  </main>
+  <main class="flex flex-col align-center justify-center text-center" v-else>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import DataTitle from "../components/DateTitle.vue";
+import axios from "axios";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    DataTitle,
   },
 };
 </script>
